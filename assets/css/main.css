@@ -1,8 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 :root {
   /* Fonts */
   --main-font: "Helvetica Neue", Arial, sans-serif;
@@ -45,19 +40,8 @@ html {
     overflow: hidden;
   }
   
-
-  #scalable-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Zentriere die gesamte Komponente vertikal und horizontal */
-  .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
+  button {
+    font-family: var(--main-font);
+    line-height: 1;
+    cursor: pointer;
   }

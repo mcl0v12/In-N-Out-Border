@@ -1,10 +1,7 @@
-<!-- PolygonAdjustments.vue -->
-
 <template>
   <div
     class="w-full max-w-[12rem] absolute top-[180px] left-6 bg-white flex flex-col gap-4 p-4 text-xs rounded-lg shadow-lg z-[2]"
   >
-    <!-- Steuerung der Breite -->
     <div class="flex flex-col gap-2">
       <label for="widthFactor">Width</label>
       <input
@@ -18,7 +15,6 @@
       <input type="number" v-model.number="store.widthFactor" />
     </div>
 
-    <!-- Steuerung der Höhe -->
     <div class="flex flex-col gap-2">
       <label for="heightFactor">Height</label>
       <input
@@ -32,35 +28,32 @@
       <input type="number" v-model.number="store.heightFactor" />
     </div>
 
-        <!-- Steuerung der Eckenstumpfheit -->
-        <div class="flex flex-col gap-2">
-          <label for="bluntnessFactor">Bluntness</label>
-          <input
-            type="range"
-            id="bluntnessFactor"
-            v-model.number="store.bluntnessFactor"
-            min="0"
-            max="3"
-            step="0.25"
-          />
-          <input type="number" v-model.number="store.bluntnessFactor" />
-        </div>
+    <div class="flex flex-col gap-2">
+      <label for="bluntnessFactor">Bluntness</label>
+      <input
+        type="range"
+        id="bluntnessFactor"
+        v-model.number="store.bluntnessFactor"
+        min="0.1"
+        max="3"
+        step="0.1"
+      />
+      <input type="number" v-model.number="store.bluntnessFactor" />
+    </div>
 
-    <!-- Neuer Schieberegler für Corner Size -->
     <div class="flex flex-col gap-2">
       <label for="cornerSize">Corner Size</label>
       <input
         type="range"
         id="cornerSize"
         v-model.number="store.cornerSize"
-        min="0"
+        min="0.1"
         max="3"
         step="0.1"
       />
       <input type="number" v-model.number="store.cornerSize" />
     </div>
 
-    <!-- Steuerung des Abstands -->
     <div class="flex flex-col gap-2">
       <label for="spacingFactor">Spacing</label>
       <input
@@ -68,13 +61,12 @@
         id="spacingFactor"
         v-model.number="store.spacingFactor"
         min="-1"
-        max="5"
+        max="3"
         step="0.1"
       />
       <input type="number" v-model.number="store.spacingFactor" />
     </div>
 
-    <!-- Steuerung der Stroke Width -->
     <div class="flex flex-col gap-2">
       <label for="strokeWidthFactor">Stroke Width</label>
       <input
@@ -87,12 +79,25 @@
       />
       <input type="number" v-model.number="store.strokeWidthFactor" />
     </div>
-    
 
-    <!-- Dynamischer Button für ClipPath -->
     <button @click="toggleClipPath">
       {{ store.clipPathCreated ? "Remove ClipPath" : "Create ClipPath" }}
     </button>
+
+    <!--
+            <div class="flex flex-col gap-2">
+              <label for="cornerInsetAngle">Corner Inset Angle (degrees)</label>
+              <input
+                type="range"
+                id="cornerInsetAngle"
+                v-model.number="store.cornerInsetAngle"  
+                min="0" 
+                max="0.1" 
+                step="0.01"
+              />
+              <input type="number" v-model.number="store.cornerInsetAngle" />
+            </div>
+ -->
   </div>
 </template>
 
